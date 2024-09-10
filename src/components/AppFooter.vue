@@ -143,10 +143,10 @@ export default {
 
           <div class="social-icons">
             <img src="../assets/img/footer-facebook.png" alt="facebook">
-            <img src="../assets/img/footer-facebook.png" alt="facebook">
-            <img src="../assets/img/footer-facebook.png" alt="facebook">
-            <img src="../assets/img/footer-facebook.png" alt="facebook">
-            <img src="../assets/img/footer-facebook.png" alt="facebook">
+            <img src="../assets/img/footer-twitter.png" alt="twitter">
+            <img src="../assets/img/footer-youtube.png" alt="youtube">
+            <img src="../assets/img/footer-periscope.png" alt="periscope">
+            <img src="../assets/img/footer-pinterest.png" alt="pinterest">
           </div>
         </div>
       </div>
@@ -155,36 +155,38 @@ export default {
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  /* FOOTER LINKS */
 
   footer .footer-links {
     padding: 40px 0;
     background-color: #0282F9;
-  }
+    img {
+      max-width: 50px;
+    }
 
-  footer .footer-links img {
-    max-width: 50px;
-  }
-
-  footer .footer-links ul {
+    ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
     list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        white-space: nowrap;
+      }
+    }
+    }
   }
 
-  footer .footer-links ul li {
-    display: flex;
-    align-items: center;
-  }
+  /* FOOTER INFOS */
 
-  footer .footer-links ul li a{
-    margin: 0 10px;
-    text-decoration: none;
-    color: white;
-    white-space: nowrap;
-  }
-  
   footer .footer-infos-bg {
   padding: 40px 0;
   background-image: 
@@ -200,46 +202,61 @@ export default {
     height: 80%;
     display: flex;
     flex-wrap: wrap;
-  }
 
-  footer .footer-infos ul {
-    list-style: none;
-    padding: 0;
-    margin-right: 30px;
-  }
-
-  footer .footer-infos ul li {
-    padding: 0;
-  }
-
-  footer .footer-infos ul li a {
-    text-decoration: none;
-    color: grey;
-    font-size: 0.85rem;
-  }
-
-  footer .footer-infos h4 {
+    h4 {
     margin-bottom: 10px;
     font-size: 1.2rem;
   }
 
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-right: 30px;
+
+      li {
+      padding: 0;
+
+        a {
+        text-decoration: none;
+        color: grey;
+        font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  /* FOOTER SOCIALS */
+
   footer .footer-socials {
     background-color: #303030;
-  }
 
-  footer .footer-socials .container {
-    display: flex;
-    padding: 40px 0;
-    justify-content: space-between;
-  }
+    .container {
+      display: flex;
+      padding: 40px 0;
+      justify-content: space-between;
 
-  footer .footer-socials .container button {
-    border: none;
-    padding: 20px;
-  }
+      button {
+        padding: 15px 20px;
+        background-color: #303030;
+        border: 2px solid #0282F9;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
 
-  footer .footer-socials .socials {
-    display: flex;
+      .socials {
+        display: flex;
+        
+        h2 {
+          margin-right: 20px;
+          color: #0282F9;
+        }
+      }
+
+      .social-icons img {
+        margin: 0 10px;
+      }
+    }   
   }
 
 </style>
