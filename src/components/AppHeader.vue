@@ -53,7 +53,13 @@ export default {
           url: '#',
           active: false
         }
-      ]
+      ],
+      activeLink: 1
+    };
+  },
+  methods: {
+    setActiveLink(newIndex) {
+      this.activeLink = newIndex;
     }
   }
 }
@@ -70,9 +76,9 @@ export default {
         <div>
           <ul>
             <li v-for="(link, index) in navlinks" :key="index">
-              <a :href="link.url" :class="{
-                'active': link.active
-              }">
+              <a :href="link.url" 
+              :class="{'active': activeLink === index}"
+              @click.prevent="setActiveLink(index)">
               {{ link.label }}
               </a>
             </li>
@@ -85,11 +91,12 @@ export default {
 
 <style scoped>
 
-header {
+  header {
     background-color: white;
     height: 150px;
     display: flex;
     align-items: center;
+    margin-top: 20px;
   }
 
   header nav {
@@ -106,6 +113,23 @@ header {
   header nav ul li a {
     text-decoration: none;
     margin: 0 10px;
+    font-size: 0.90rem;
+    color: #464646;
+    font-weight: bold;
+    position: relative;
   }
 
+  header nav ul li a.active {
+    color: #0282F9;
+  }
+
+  header nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -65px;
+    height: 5px;
+    background-color: #0282F9;
+  }
 </style>
