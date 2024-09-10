@@ -81,6 +81,14 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    getImagePath: function(img) {
+      const url = new URL(`../assets/img/${img}`, import.meta.url);
+
+      const link = url.href
+      return link
+    }
   }
 }
 </script>
@@ -93,7 +101,7 @@ export default {
         <div>
           <ul>
               <li v-for="(footerlink, index) in footerlinks" :key="index">
-                <img src="../assets/img/buy-comics-merchandise.png" :alt="footerlink.label">
+                <img :src="getImagePath(footerlink.icon)" :alt="footerlink.label">
                 <a :href="footerlink.url">
                 {{ footerlink.label }}
                 </a>
@@ -149,18 +157,32 @@ export default {
 
 <style scoped>
 
-footer .footer-links {
+  footer .footer-links {
     padding: 40px 0;
     background-color: #0282F9;
   }
 
+  footer .footer-links img {
+    max-width: 50px;
+  }
+
   footer .footer-links ul {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    list-style: none;
   }
 
   footer .footer-links ul li {
     display: flex;
     align-items: center;
+  }
+
+  footer .footer-links ul li a{
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
   }
   
   footer .footer-infos-bg {

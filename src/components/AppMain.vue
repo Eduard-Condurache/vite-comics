@@ -20,7 +20,7 @@ export default {
 main {
     width: 100%;
     height: 150px;
-    background-color: lightcoral;
+    background-color: #1C1C1C;
     display: flex;
     align-items: center;
   }
