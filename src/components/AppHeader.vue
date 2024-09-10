@@ -89,7 +89,7 @@ export default {
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
   header {
     background-color: white;
@@ -97,39 +97,40 @@ export default {
     display: flex;
     align-items: center;
     margin-top: 20px;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      ul {
+        display: flex;
+        list-style: none;
+
+        li a {
+          text-decoration: none;
+          margin: 0 10px;
+          font-size: 0.90rem;
+          color: #464646;
+          font-weight: bold;
+          position: relative;
+
+          &.active {
+            color: #0282F9;
+            
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: -65px;
+              height: 5px;
+              background-color: #0282F9;
+            }
+          }
+        }
+      }
+    }
   }
 
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  header nav ul {
-    display: flex;
-    list-style: none;
-  }
-
-  header nav ul li a {
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 0.90rem;
-    color: #464646;
-    font-weight: bold;
-    position: relative;
-  }
-
-  header nav ul li a.active {
-    color: #0282F9;
-  }
-
-  header nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -65px;
-    height: 5px;
-    background-color: #0282F9;
-  }
 </style>
