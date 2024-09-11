@@ -91,32 +91,33 @@ export default {
 
 <style lang="scss" scoped>
 
+@use '../assets/scss/partials/mixins.scss' as *;
+@use '../assets/scss/partials/variables' as *;
+
   header {
     background-color: white;
     height: 150px;
-    display: flex;
-    align-items: center;
+    @include flex-center;
     margin-top: 20px;
 
     nav {
-      display: flex;
-      justify-content: space-between;
+      @include flex-center;
       align-items: center;
 
       ul {
         display: flex;
-        list-style: none;
+        @include simple-ul;
 
         li a {
-          text-decoration: none;
-          margin: 0 10px;
+          text-decoration: $noTextDecoration;
+          margin: $xMargin;
           font-size: 0.90rem;
           color: #464646;
           font-weight: bold;
           position: relative;
 
           &.active {
-            color: #0282F9;
+            color: $mainColor;
             
             &::after {
               content: '';
@@ -125,7 +126,7 @@ export default {
               right: 0;
               bottom: -65px;
               height: 5px;
-              background-color: #0282F9;
+              background-color: $mainColor;
             }
           }
         }

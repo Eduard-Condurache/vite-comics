@@ -132,7 +132,9 @@ export default {
       <div class="container">
         <div>
           <button>
-            SIGN-UP NOW
+            <a href="#">
+              SIGN-UP NOW
+            </a>
           </button>
         </div>
 
@@ -142,11 +144,21 @@ export default {
           </h2>
 
           <div class="social-icons">
-            <img src="../assets/img/footer-facebook.png" alt="facebook">
-            <img src="../assets/img/footer-twitter.png" alt="twitter">
-            <img src="../assets/img/footer-youtube.png" alt="youtube">
-            <img src="../assets/img/footer-periscope.png" alt="periscope">
-            <img src="../assets/img/footer-pinterest.png" alt="pinterest">
+            <a href="#">
+              <img src="../assets/img/footer-facebook.png" alt="facebook">
+            </a>
+            <a href="#">
+              <img src="../assets/img/footer-twitter.png" alt="twitter">
+            </a>
+            <a href="#">
+              <img src="../assets/img/footer-youtube.png" alt="youtube">
+            </a>
+            <a href="#">
+              <img src="../assets/img/footer-periscope.png" alt="periscope">
+            </a>
+            <a href="#">
+              <img src="../assets/img/footer-pinterest.png" alt="pinterest">
+            </a>
           </div>
         </div>
       </div>
@@ -157,27 +169,28 @@ export default {
 
 <style lang="scss" scoped>
 
+@use '../assets/scss/partials/mixins.scss' as *;
+@use '../assets/scss/partials/variables' as *;
+
   /* FOOTER LINKS */
 
   footer .footer-links {
-    padding: 40px 0;
-    background-color: #0282F9;
+    padding: $yPadding;
+    background-color: $mainColor;
     img {
       max-width: 50px;
     }
 
     ul {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+    @include simple-ul;
+    @include flex-center;
 
     li {
-      display: flex;
-      align-items: center;
+      @include flex-center;
       a {
-        margin: 0 10px;
-        text-decoration: none;
+        margin: $xMargin;
+        text-decoration: $noTextDecoration;
         color: white;
         white-space: nowrap;
       }
@@ -188,7 +201,7 @@ export default {
   /* FOOTER INFOS */
 
   footer .footer-infos-bg {
-  padding: 40px 0;
+  padding: $yPadding;
   background-image: 
     url('src/assets/img/dc-logo-bg.png'),
     url('src/assets/img/footer-bg.jpg');
@@ -209,15 +222,14 @@ export default {
   }
 
     ul {
-      list-style: none;
-      padding: 0;
+      @include simple-ul;
       margin-right: 30px;
 
       li {
       padding: 0;
 
         a {
-        text-decoration: none;
+        text-decoration: $noTextDecoration;
         color: grey;
         font-size: 0.85rem;
         }
@@ -231,17 +243,20 @@ export default {
     background-color: #303030;
 
     .container {
-      display: flex;
-      padding: 40px 0;
-      justify-content: space-between;
+      @include flex-center;
+      padding: $yPadding;
 
       button {
         padding: 15px 20px;
         background-color: #303030;
-        border: 2px solid #0282F9;
-        color: white;
+        border: 2px solid $mainColor;
         font-weight: bold;
         font-size: 1.1rem;
+
+        a {
+          color: white;
+          text-decoration: $noTextDecoration;
+        }
       }
 
       .socials {
@@ -249,12 +264,12 @@ export default {
         
         h2 {
           margin-right: 20px;
-          color: #0282F9;
+          color: $mainColor;
         }
       }
 
       .social-icons img {
-        margin: 0 10px;
+        margin: $xMargin;
       }
     }   
   }

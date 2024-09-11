@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+@mixin simple-ul {
+    list-style: none;
+    padding: 0;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

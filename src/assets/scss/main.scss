@@ -1,0 +1,14 @@
+@use 'partials/reset.scss' as *;
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+ /* GENERAL */
+  
+ .container {
+    width: 1320px;
+    margin: 0 auto;
+  }
+  
+  img {
+    max-width: 100%;
+  }
