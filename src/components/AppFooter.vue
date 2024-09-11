@@ -190,8 +190,7 @@ export default {
       @include flex-center;
       a {
         margin: $xMargin;
-        text-decoration: $noTextDecoration;
-        color: white;
+        @include a-reset;
         white-space: nowrap;
       }
     }
@@ -254,8 +253,7 @@ export default {
         font-size: 1.1rem;
 
         a {
-          color: white;
-          text-decoration: $noTextDecoration;
+          @include a-reset;
         }
       }
 

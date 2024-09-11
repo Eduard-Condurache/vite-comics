@@ -11,3 +11,9 @@
     align-items: center;
 }
 
+@mixin a-reset {
+    color: white;
+    text-decoration: $noTextDecoration;
+    font-weight: bold;
+}
+
